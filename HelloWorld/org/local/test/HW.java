@@ -14,7 +14,7 @@ public class HW {
 		}catch (IOException e){
 			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
 		}
-		
+		 	Char sign="!";
 			String phrase= getLetterH()+
 							getLetterE()+
 							getLetterL()+
@@ -25,7 +25,7 @@ public class HW {
 							getLetterR()+
 							getLetterL()+
 							getLetterD();
-		 String letter=swapSymbols(phrase,'!');//TODO использовать тот символ который был веден пользователем с консоли
+		 String letter=swapSymbols(phrase,sign);//TODO использовать тот символ который был веден пользователем с консоли
 		System.out.println(letter);
 	}
 	private static String swapSymbols(String word, char symbol){
@@ -38,7 +38,8 @@ public class HW {
 		 /*char[] symbols={symbol};
 		 String symbolStr= new String(symbols);*/
 		 //замена подстроки + преобразование char to string
-		word.replaceAll("\\*",Character.toString(symbol)); //TODO избавиться от hard-code "\\*"
+		String denomination ("*");
+		word.replaceAll(denomination,Character.toString(symbol)); //TODO избавиться от hard-code "\\*"
 		return word;
 	}
 	
