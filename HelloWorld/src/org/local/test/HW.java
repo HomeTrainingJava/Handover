@@ -7,12 +7,12 @@ public class HW {
 		char symbol;
 		System.out.println("¬ведите данные");
 		 try {
-			symbol=(char)input.read();//TODO „то будет, если в консоли введу то, что не сможет быть преобразовано в char			
+			symbol=(char)input.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'  			
 			//System.out.println(symbol);
 		}catch ( IOException e){
 			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
 		}
-		 	Char sign="!";//TODO зачем эта переменна€ cоздана?		 	
+		 	Char sign="!";//TODO why has that variable been created? 	 	
 			String phrase= getLetterH()+
 							getLetterE()+
 							getLetterL()+
@@ -23,7 +23,7 @@ public class HW {
 							getLetterR()+
 							getLetterL()+
 							getLetterD();
-		 String letter=swapSymbols(phrase,sign);//TODO почему используетс€ подставной символ? а не тот который приходит с консольного ввода пользователем!!!!
+		 String letter=swapSymbols(phrase,sign);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
 		System.out.println(letter);
 	}
 	private static String swapSymbols(String word, char symbol){
@@ -37,7 +37,7 @@ public class HW {
 		 String symbolStr= new String(symbols);*/
 		 //замена подстроки + преобразование char to string
 		String denomination ("*");
-		word.replaceAll(denomination,Character.toString(symbol)); //TODO избавитьс€ от hard-code "\\*"
+		word.replaceAll(denomination,Character.toString(symbol));
 		return word;
 	}
 	
