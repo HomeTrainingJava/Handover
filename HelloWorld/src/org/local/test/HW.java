@@ -2,19 +2,17 @@ package org.local.test;
 import java.io.*;
 public class HW {
 		
-	public static void main(String[] args) 
-	{
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		char symbol;
 		System.out.println("Введите данные");
 		 try {
-			symbol=(char)input.read();
+			symbol=(char)input.read();//TODO Что будет, если в консоли введу то, что не сможет быть преобразовано в char			
 			//System.out.println(symbol);
-		}catch (IOException e){
+		}catch ( IOException e){
 			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
 		}
-		 	Char sign="!";
+		 	Char sign="!";//TODO зачем эта переменная cоздана?		 	
 			String phrase= getLetterH()+
 							getLetterE()+
 							getLetterL()+
@@ -25,7 +23,7 @@ public class HW {
 							getLetterR()+
 							getLetterL()+
 							getLetterD();
-		 String letter=swapSymbols(phrase,sign);//TODO использовать тот символ который был веден пользователем с консоли
+		 String letter=swapSymbols(phrase,sign);//TODO почему используется подставной символ? а не тот который приходит с консольного ввода пользователем!!!!
 		System.out.println(letter);
 	}
 	private static String swapSymbols(String word, char symbol){
