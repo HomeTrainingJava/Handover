@@ -2,19 +2,19 @@ package org.local.test;
 import java.io.*;
 public class HW {
 		
-	public static void main(String[] args) 
-	{
-		// TODO Auto-generated method stub
+	public static void main(String[] args) {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		char symbol;
 		System.out.println("Введите данные");
 		 try {
-			symbol=(char)input.read();
+			symbol=(char)input.read();//TODO Что будет, если в консоли введу то, что не сможет быть преобразовано в char
 			//System.out.println(symbol);
-		}catch (IOException e){
+		}catch ( IOException e){
 			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
-		}
-		 	Char sign="!";
+		}	
+		 
+			String mistake ="During console read the following error occured:\n";
+			char firstmessage=mistake.charAt(0);
 			String phrase= getLetterH()+
 							getLetterE()+
 							getLetterL()+
@@ -25,7 +25,9 @@ public class HW {
 							getLetterR()+
 							getLetterL()+
 							getLetterD();
-		 String letter=swapSymbols(phrase,sign);//TODO использовать тот символ который был веден пользователем с консоли
+
+		 String letter=swapSymbols(phrase,);//TODO почему используется подставной символ? а не тот который приходит с консольного ввода пользователем!!!!
+
 		System.out.println(letter);
 	}
 	private static String swapSymbols(String word, char symbol){
@@ -38,8 +40,8 @@ public class HW {
 		 /*char[] symbols={symbol};
 		 String symbolStr= new String(symbols);*/
 		 //замена подстроки + преобразование char to string
-		String denomination ("*");
-		word.replaceAll(denomination,Character.toString(symbol)); //TODO избавиться от hard-code "\\*"
+
+		word.replaceAll( ,Character.toString(symbol)); //TODO избавиться от hard-code "\\*"
 		return word;
 	}
 	
