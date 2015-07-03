@@ -3,7 +3,6 @@ import java.io.*;
 public class HW {
 	private static final char patternSymbol='*';
 	private final static int letterArrayLength = 5;
-	private final static int LetterLength=5;
 	public static void main(String[] args) {
 		InputStreamReader inReader = new InputStreamReader(System.in);		
 		//BufferedReader input = new BufferedReader(inReader);				
@@ -24,37 +23,20 @@ public class HW {
 					strBuilder.append(" ");
 				}
 				strBuilder.append("\n");
-				
-			}	
-			try {			   		
-				StringBuilder strBuild = new StringBuilder();
-				String[] letterW = getLetterW().split("\n");
-				String[] letterR = getLetterR().split("\n");
-				String[][] fullWord = {letterH, letterE,letterL,letterL,letterO};
-				String joinLetter = "";						
-							
-				for (int i=1;i<LetterLength; i++){							
-					for (int j=1;j<fullWord.length; j++){
-						String[] currentLetter = fullWord[j];
-						strBuild.append(currentLetter[i]+" ");
-						strBuild.append(" ");
-					}
-					strBuilder.append("\n");
-					
-				}			
-					
-			String phrase = strBuilder.toString();			 
-			System.out.println("¬ведите данные");
-			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
-			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
-			System.out.println(phrase);
-	
+				String phrase = strBuilder.toString();			 
+				System.out.println("¬ведите данные");
+				char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
+				phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
+				System.out.println(phrase);
+		
+				}
 			}
-			catch ( IOException e){
-			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
-		}	
-		 }
+				catch ( IOException e){
+				System.err.println("During console read the following error occured:\n"+ e.getMessage());	
+			}	
+				
 	}
+	
 	private static String swapSymbols(String word, char symbol){
 		
 		//преобразование char to string
