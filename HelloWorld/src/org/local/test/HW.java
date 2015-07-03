@@ -13,11 +13,14 @@ public class HW {
 			String[] letterE = getLetterE().split("\n");
 			String[] letterL = getLetterL().split("\n");
 			String[] letterO = getLetterO().split("\n");
-			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO};
-			String joinedLetter = "";						
+			String[] letterW = getLetterO().split("\n");
+			String[] letterR = getLetterO().split("\n");
+			String[] letterD = getLetterO().split("\n");
+			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterW,letterO,letterR,letterL,letterD,};
+			String joinedLetter = "";			
 						
-			for (int i=0;i<letterArrayLength; i++){							
-				for (int j=0;j<wholeWord.length; j++){
+			for (int i=1;i<letterArrayLength; i++){							
+				for (int j=1;j<wholeWord.length; j++){
 					String[] currentLetterArray = wholeWord[j];
 					strBuilder.append(currentLetterArray[i]+" ");
 					strBuilder.append(" ");
@@ -34,6 +37,7 @@ public class HW {
 				catch ( IOException e){
 				System.err.println("During console read the following error occured:\n"+ e.getMessage());	
 			}	
+		 
 				
 	}
 	
