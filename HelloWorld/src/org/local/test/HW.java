@@ -3,6 +3,7 @@ import java.io.*;
 public class HW {
 	private static final char patternSymbol='*';
 	private final static int letterArrayLength = 5;
+	private final static int LetterLenght=5;
 	public static void main(String[] args) {
 		InputStreamReader inReader = new InputStreamReader(System.in);		
 		//BufferedReader input = new BufferedReader(inReader);				
@@ -11,7 +12,11 @@ public class HW {
 			
 			String[] letterH = getLetterH().split("\n");
 			String[] letterE = getLetterE().split("\n");
-			String[][] wholeWord = {letterH, letterE};
+			String[] letterL = getLetterL().split("\n");
+			String[] letterO = getLetterO().split("\n");
+			String[] letterW = getLetterW().split("\n");
+			String[] letterR = getLetterR().split("\n");
+			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO};
 			String joinedLetter = "";						
 						
 			for (int i=0;i<letterArrayLength; i++){							
@@ -21,6 +26,7 @@ public class HW {
 					strBuilder.append(" ");
 				}
 				strBuilder.append("\n");
+				
 			}			
 					
 			String phrase = strBuilder.toString();			 
@@ -28,7 +34,9 @@ public class HW {
 			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
 			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
 			System.out.println(phrase);
-		}catch ( IOException e){
+	
+			}
+			catch ( IOException e){
 			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
 		}	 	
 	}
