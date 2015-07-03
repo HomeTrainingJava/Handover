@@ -1,34 +1,36 @@
 package org.local.test;
 import java.io.*;
 public class HW {
-		
+	private static final char patternSymbol='*';
+	private final static int letterArrayLength = 5;
 	public static void main(String[] args) {
-		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-		char symbol;
-		System.out.println("Введите данные");
-		 try {
-			symbol=(char)input.read();//TODO Что будет, если в консоли введу то, что не сможет быть преобразовано в char
-			//System.out.println(symbol);
+		InputStreamReader inReader = new InputStreamReader(System.in);		
+		//BufferedReader input = new BufferedReader(inReader);				
+		 try {			   		
+			StringBuilder strBuilder = new StringBuilder();
+			
+			String[] letterH = getLetterH().split("\n");
+			String[] letterE = getLetterE().split("\n");
+			String[][] wholeWord = {letterH, letterE};
+			String joinedLetter = "";						
+						
+			for (int i=0;i<letterArrayLength; i++){							
+				for (int j=0;j<wholeWord.length; j++){
+					String[] currentLetterArray = wholeWord[j];
+					strBuilder.append(currentLetterArray[i]+" ");
+					strBuilder.append(" ");
+				}
+				strBuilder.append("\n");
+			}			
+					
+			String phrase = strBuilder.toString();			 
+			System.out.println("Введите данные");
+			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
+			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
+			System.out.println(phrase);
 		}catch ( IOException e){
 			System.err.println("During console read the following error occured:\n"+ e.getMessage());	
-		}	
-		 
-			String mistake ="During console read the following error occured:\n";
-			char firstmessage=mistake.charAt(0);
-			String phrase= getLetterH()+
-							getLetterE()+
-							getLetterL()+
-							getLetterL()+
-							getLetterO()+
-							getLetterW()+
-							getLetterO()+
-							getLetterR()+
-							getLetterL()+
-							getLetterD();
-
-		 String letter=swapSymbols(phrase,);//TODO почему используется подставной символ? а не тот который приходит с консольного ввода пользователем!!!!
-
-		System.out.println(letter);
+		}	 	
 	}
 	private static String swapSymbols(String word, char symbol){
 		
@@ -40,9 +42,7 @@ public class HW {
 		 /*char[] symbols={symbol};
 		 String symbolStr= new String(symbols);*/
 		 //замена подстроки + преобразование char to string
-
-		word.replaceAll( ,Character.toString(symbol)); //TODO избавиться от hard-code "\\*"
-		return word;
+		return word.replace(patternSymbol,symbol);		
 	}
 	
 		protected static String getLetterO() {
