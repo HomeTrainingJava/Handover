@@ -16,7 +16,7 @@ public class HW {
 			String[] letterW = getLetterO().split("\n");
 			String[] letterR = getLetterO().split("\n");
 			String[] letterD = getLetterO().split("\n");
-			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterW,letterO,letterR,letterL,letterD,};
+			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO};
 			String joinedLetter = "";			
 						
 			for (int i=0;i<letterArrayLength; i++){							
@@ -24,18 +24,21 @@ public class HW {
 					String[] currentLetterArray = wholeWord[j];
 					strBuilder.append(currentLetterArray[i]+" ");
 					strBuilder.append(" ");
+					
 				}
-				strBuilder.append("\n");
-				String phrase = strBuilder.toString();			 
-				System.out.println("¬ведите данные");
-				char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
-				phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
-				System.out.println(phrase);
-		
-				}
-			}
+				
+			
+		 }
+			strBuilder.append("\n");
+			String phrase = strBuilder.toString();			 
+			System.out.println("¬ведите данные");
+			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
+			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
+			System.out.println(phrase);  
+	 }
 				catch ( IOException e){
 				System.err.println("During console read the following error occured:\n"+ e.getMessage());	
+				
 			}	
 		 
 				
