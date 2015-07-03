@@ -19,8 +19,8 @@ public class HW {
 			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterW,letterO,letterR,letterL,letterD,};
 			String joinedLetter = "";			
 						
-			for (int i=1;i<letterArrayLength; i++){							
-				for (int j=1;j<wholeWord.length; j++){
+			for (int i=0;i<letterArrayLength; i++){							
+				for (int j=0;j<wholeWord.length; j++){
 					String[] currentLetterArray = wholeWord[j];
 					strBuilder.append(currentLetterArray[i]+" ");
 					strBuilder.append(" ");
