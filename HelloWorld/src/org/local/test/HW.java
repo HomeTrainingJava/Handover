@@ -20,10 +20,13 @@ public class HW {
 			for (int i=0;i<letterArrayLength; i++){				
 				for (int j=0;j<wholeWord.length; j++){
 					String[] currentLetterArray = wholeWord[j];
+					
 					if (currentLetterArray.length > i) 
 					{
+						
 						strBuilder.append(currentLetterArray[i]);
-						strBuilder.append(" ");				
+						strBuilder.append(" ");
+						
 					}
 				}				
 			}			
