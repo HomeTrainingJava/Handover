@@ -4,11 +4,10 @@ public class HW {
 	private static final char patternSymbol='*';
 	private final static int letterArrayLength = 5;
 	public static void main(String[] args) {
-		InputStreamReader inReader = new InputStreamReader(System.in);		
-		//BufferedReader input = new BufferedReader(inReader);				
-		 try {			   		
-			StringBuilder strBuilder = new StringBuilder();
-			
+		InputStreamReader inReader = new InputStreamReader(System.in);
+		try {			   				
+			//Create phrase with pattern symbols
+			StringBuilder strBuilder = new StringBuilder();			
 			String[] letterH = getLetterH().split("\n");
 			String[] letterE = getLetterE().split("\n");
 			String[] letterL = getLetterL().split("\n");
@@ -17,31 +16,32 @@ public class HW {
 			String[] letterR = getLetterO().split("\n");
 			String[] letterD = getLetterO().split("\n");
 			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO};
-			String joinedLetter = "";			
-						
+			String joinedLetter = "";						
 			for (int i=0;i<letterArrayLength; i++){							
 				for (int j=0;j<wholeWord.length; j++){
 					String[] currentLetterArray = wholeWord[j];
-					strBuilder.append(currentLetterArray[i]+" ");
-					strBuilder.append(" ");
-					
-				}
-				
-			
-		 }
+					strBuilder.append(currentLetterArray[i]);
+					strBuilder.append(" ");					
+				}				
+			}
 			strBuilder.append("\n");
-			String phrase = strBuilder.toString();			 
+			String phrase = strBuilder.toString();
+			//Ask user for its own symbol
 			System.out.println("¬ведите данные");
 			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
+			//make swap to retrieved symbol
 			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
-			System.out.println(phrase);  
-	 }
-				catch ( IOException e){
-				System.err.println("During console read the following error occured:\n"+ e.getMessage());	
-				
-			}	
-		 
-				
+			//print out phrase
+			System.out.println(phrase);			
+		 }catch ( IOException e){
+			 System.err.println("During console read the following error occured:\n"+ e.getMessage());		
+		 }finally{
+			 try {
+				inReader.close();
+			} catch (IOException e) {
+				System.err.println("The following error occured during attempt to close console read stream:\n"+ e.getMessage());			
+			}
+		 }
 	}
 	
 	private static String swapSymbols(String word, char symbol){
