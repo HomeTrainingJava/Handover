@@ -2,7 +2,7 @@ package org.local.test;
 import java.io.*;
 public class HW {
 	private static final char patternSymbol='*';
-	private final static int letterArrayLength = 5;
+	private final static int letterArrayLength = 6;
 	public static void main(String[] args) {
 		InputStreamReader inReader = new InputStreamReader(System.in);
 		try {			   				
@@ -19,14 +19,14 @@ public class HW {
 			String joinedLetter = "";					
 			for (int i=0;i<letterArrayLength; i++){				
 				for (int j=0;j<wholeWord.length; j++){
-					String[] currentLetterArray = wholeWord[j];
+					String[] currentLetterArray = wholeWord[j];					
 					if (currentLetterArray.length > i) 
 					{
 						strBuilder.append(currentLetterArray[i]);
 						strBuilder.append(" ");
-						strBuilder.append("\n");
 					}
-				}				
+				}
+				strBuilder.append("\n");
 			}	
 			String phrase = strBuilder.toString();
 			//Ask user for its own symbol
@@ -62,31 +62,31 @@ public class HW {
 	
 		protected static String getLetterO() {
 		// TODO Auto-generated method stub”
-		String letterO=   "****\n*  *\n*  *\n*  *\n*  *\n****";
+		String letterO=   "****\n*  *\n*  *\n*  *\n****";
 		return letterO;
 	}	
 
 	private static String getLetterL() {
 		// TODO Auto-generated method stub
-		String letterL=   "*   \n*   \n*   \n*   \n*   \n****";
+		String letterL=     "*   \n*   \n*   \n*   \n****";
 		return letterL;
 				
 	}
 
 	private static String getLetterE() {
 		// TODO Auto-generated method stub
-		String letterE=   "****\n*   \n****\n*   \n*   \n****";
+		String letterE=   "****\n*   \n****\n*   \n****";
 		return letterE;
 	}
 
 	private static String getLetterH() {
 		// TODO Auto-generated method stub
-		 String letterH =   "*   *\n*   *\n****\n*  *\n*  *\n****";
+		 String letterH =   "*  *\n*  *\n****\n*  *\n*  *";
 		 return letterH; 
 	}
 	
 	private static String getLetterR(){
-		String letterR=   "****\n*  *\n* * \n*  *\n*   *";		
+		String letterR=   "****\n*  *\n* * \n*  *\n*  *";		
 		return letterR;
 	}
 
