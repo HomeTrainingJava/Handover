@@ -30,6 +30,7 @@ public class HW {
 					}
 				}				
 			}			
+			String strArray= new String ();
 			strBuilder.append("\n");
 			String phrase = strBuilder.toString();
 			//Ask user for its own symbol
