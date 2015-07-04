@@ -15,15 +15,19 @@ public class HW {
 			String[] letterW = getLetterW().split("\n");
 			String[] letterR = getLetterR().split("\n");
 			String[] letterD = getLetterD().split("\n");
-			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterW,letterO,letterR,letterL,letterD,};
+			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterW,letterO,letterR,letterL,letterD};
 			String joinedLetter = "";						
-			for (int i=0;i<letterArrayLength; i++){							
-				for (int j=2;j<wholeWord.length; j++){
+			for (int i=0;i<letterArrayLength; i++){				
+				for (int j=0;j<wholeWord.length; j++){
 					String[] currentLetterArray = wholeWord[j];
-					strBuilder.append(currentLetterArray[i]);
-					strBuilder.append(" ");					
-				}				
-			}
+					if (currentLetterArray.length > i) 
+					{
+						strBuilder.append(currentLetterArray[i]);
+						strBuilder.append(" ");				
+					}
+				}
+				
+			}			
 			strBuilder.append("\n");
 			String phrase = strBuilder.toString();
 			//Ask user for its own symbol
