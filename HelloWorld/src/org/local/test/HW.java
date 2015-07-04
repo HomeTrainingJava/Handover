@@ -12,13 +12,13 @@ public class HW {
 			String[] letterE = getLetterE().split("\n");
 			String[] letterL = getLetterL().split("\n");
 			String[] letterO = getLetterO().split("\n");
-			String[] letterW = getLetterO().split("\n");
-			String[] letterR = getLetterO().split("\n");
-			String[] letterD = getLetterO().split("\n");
-			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO};
+			String[] letterW = getLetterW().split("\n");
+			String[] letterR = getLetterR().split("\n");
+			String[] letterD = getLetterD().split("\n");
+			String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterW,letterO,letterR,letterL,letterD,};
 			String joinedLetter = "";						
 			for (int i=0;i<letterArrayLength; i++){							
-				for (int j=0;j<wholeWord.length; j++){
+				for (int j=2;j<wholeWord.length; j++){
 					String[] currentLetterArray = wholeWord[j];
 					strBuilder.append(currentLetterArray[i]);
 					strBuilder.append(" ");					
