@@ -25,8 +25,7 @@ public class HW {
 						strBuilder.append(currentLetterArray[i]);
 						strBuilder.append(" ");				
 					}
-				}
-				
+				}				
 			}			
 			String strArray= new String ();
 			strBuilder.append("\n");
