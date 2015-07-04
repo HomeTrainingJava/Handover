@@ -25,8 +25,7 @@ public class HW {
 						strBuilder.append(currentLetterArray[i]);
 						strBuilder.append(" ");				
 					}
-				}
-				
+				}				
 			}			
 			strBuilder.append("\n");
 			String phrase = strBuilder.toString();
