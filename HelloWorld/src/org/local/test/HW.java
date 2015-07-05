@@ -23,14 +23,14 @@ public class HW {
 					if (currentLetterArray.length > i) 
 					{
 						strBuilder.append(currentLetterArray[i]);
-						strBuilder.append(" ");
+						strBuilder.append("    ");
 					}
 				}
 				strBuilder.append("\n");
 			}	
 			String phrase = strBuilder.toString();
 			//Ask user for its own symbol
-			System.out.println("¬ведите данные");
+			System.out.println("Ќапечатайте символ");
 			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
 			//make swap to retrieved symbol
 			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
@@ -62,7 +62,7 @@ public class HW {
 	
 		protected static String getLetterO() {
 		// TODO Auto-generated method stubФ
-		String letterO=   "****\n*  *\n*  *\n*  *\n****";
+		String letterO=   " ** \n*  *\n*  *\n*  *\n ** ";
 		return letterO;
 	}	
 
@@ -98,6 +98,4 @@ public class HW {
 		String letterD=   "*** \n*  *\n*  *\n*  *\n*** ";			
 		return letterD;
 	}
-
-	
 }	
