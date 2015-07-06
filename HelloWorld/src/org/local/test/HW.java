@@ -30,7 +30,7 @@ public class HW {
 			}	
 			String phrase = strBuilder.toString();
 			//Ask user for its own symbol
-			System.out.println("Напечатайте символ");
+			System.out.println("Would you like to type Hello World? What kind of symbol would you like to choose?");
 			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
 			//make swap to retrieved symbol
 			phrase=swapSymbols(phrase,symbol);//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
