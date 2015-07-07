@@ -1,5 +1,6 @@
 package org.local.test;
 import java.io.*;
+import org.local.test.util.Helpers;
 public class HW {
 	private static final char patternSymbol='*';
 	private final static int letterArrayLength = 6;
