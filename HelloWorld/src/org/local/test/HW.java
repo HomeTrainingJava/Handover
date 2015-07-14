@@ -1,60 +1,31 @@
 package org.local.test;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import org.local.test.utils.HWUtils;
 
 public class HW {
-	private static final char patternSymbol='*';
-	private final static int letterArrayLength = 6;
+	
 	public static void main(String[] args) {
-		import HelpersToImport;
-	}
-	private static String swapSymbols(String word, char symbol){
-		
-		//преобразование char to string
-		 /*char[] symbols={symbol};
-		 String symbolStr= new String(symbols);*/
-		 //замена подстроки + преобразование char to string;
-		//преобразование char to string
-		 /*char[] symbols={symbol};
-		 String symbolStr= new String(symbols);*/
-		 //замена подстроки + преобразование char to string
-		return word.replace(patternSymbol,symbol);		
-	}
-	
-		protected static String getLetterO() {
-		// TODO Auto-generated method stubФ
-		String letterO=   " ** \n*  *\n*  *\n*  *\n ** ";
-		return letterO;
-	}	
-
-	private static String getLetterL() {
-		// TODO Auto-generated method stub
-		String letterL=     "*   \n*   \n*   \n*   \n****";
-		return letterL;
-				
-	}
-
-	private static String getLetterE() {
-		// TODO Auto-generated method stub
-		String letterE=   "****\n*   \n****\n*   \n****";
-		return letterE;
-	}
-
-	private static String getLetterH() {
-		// TODO Auto-generated method stub
-		 String letterH =   "*  *\n*  *\n****\n*  *\n*  *";
-		 return letterH; 
+		InputStreamReader inReader = new InputStreamReader(System.in);		
+		String phrase=new String(HWUtils.getWholeWord());
+		try {
+			System.out.println("Would you like to type Hello World?\nWhat symbol would you like to choose?");
+			char symbol=(char)inReader.read();//TODO What if user types in console something that won't be able turned into char? f.e '+++'
+			//make swap to retrieved symbol
+			phrase=HWUtils.swapSymbols(phrase,symbol);
+			//TODO why is the symbol with defined value used here? here should be the symbol which is defined by user in console
+			//print out phrase
+			System.out.println(phrase);			
+		 }catch ( IOException e){
+			 System.err.println("During console read the following error occured:\n"+ e.getMessage());		
+		 }finally{
+			 try {
+				inReader.close();
+			} catch (IOException e) {
+				System.err.println("The following error occured during attempt to close console read stream:\n"+ e.getMessage());			
+			}
+		 }
 	}
 	
-	private static String getLetterR(){
-		String letterR=   "****\n*  *\n* * \n*  *\n*  *";		
-		return letterR;
-	}
-
-	private static String getLetterW(){
-		String letterW=   "*           *\n *         * \n  *   *   *  \n   * * * *   \n    *   *    ";		
-		return letterW;
-	}	
-	private static String getLetterD(){
-		String letterD=   "*** \n*  *\n*  *\n*  *\n*** ";			
-		return letterD;
-	}
 }	
+	
