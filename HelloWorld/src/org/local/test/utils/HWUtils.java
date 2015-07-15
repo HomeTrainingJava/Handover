@@ -5,8 +5,8 @@ public class HWUtils {
 	
 	public static int getLetterArrayLength() {
 		return letterArrayLength;
+
 	}
-	
 	protected static String getLetterO() {
 		// TODO Auto-generated method stub”
 		String letterO=   " ** \n*  *\n*  *\n*  *\n ** ";
