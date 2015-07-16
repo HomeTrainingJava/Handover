@@ -1,6 +1,6 @@
 package org.local.test.utils;
 public class HWUtils {
-	private final static int letterArrayLength = 6;
+	private static int letterArrayLength = 0;
 	private static final char patternSymbol='*';
 	
 	public static int getLetterArrayLength() {
@@ -52,30 +52,46 @@ public class HWUtils {
 	public static String swapSymbols(String word, char symbol){
 		return word.replace(patternSymbol,symbol);	
 	}
-	public static String getWholeWord() {
-		
+	
+	
+	public static String getWholeWord()  {
 		StringBuilder strBuilder = new StringBuilder();			
 		String[] letterH = getLetterH().split("\n");
+		setLetterArrayLength(letterH.length);
 		String[] letterE = getLetterE().split("\n");
 		String[] letterL = getLetterL().split("\n");
 		String[] letterO = getLetterO().split("\n");
-		String[] letter = getLetter().split("\n");
+		String[] letterSpace = getLetter().split("\n");
 		String[] letterW = getLetterW().split("\n");
 		String[] letterR = getLetterR().split("\n");
 		String[] letterD = getLetterD().split("\n");	
-		String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letter,letterW,letterO,letterR,letterL,letterD};
+	
+		String[][] wholeWord = {letterH, letterE,letterL,letterL,letterO,letterSpace,letterW,letterO,letterR,letterL,letterD};
+		boolean isProcessingStop = false;
 		for (int i=0;i<getLetterArrayLength(); i++){				
 			for (int j=0;j<wholeWord.length; j++){
-				String[] currentLetterArray = wholeWord[j];					
-				if (currentLetterArray.length > i) 
-				{
-					strBuilder.append(currentLetterArray[i]);
-					strBuilder.append(" ");
+				String[] currentLetterArray = wholeWord[j];
+				if (isProcessingStop = currentLetterArray.length == getLetterArrayLength()) {
+					if (currentLetterArray.length > i) 
+					{
+						strBuilder.append(currentLetterArray[i]);
+						strBuilder.append(" ");
+					}
+				}else{
+					strBuilder = new StringBuilder("There is an issue on development level that requires involment of main developer. Exit...");
+					break;
 				}
+			}
+			if (isProcessingStop == true){
+				break;
 			}
 			strBuilder.append("\n");
 		}
 		String phrase = strBuilder.toString();
 		return phrase ;
+		
+	}
+	public static void setLetterArrayLength(int letterArrayLength) {
+		HWUtils.letterArrayLength = letterArrayLength;
 	}
 }
